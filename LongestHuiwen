@@ -1,0 +1,52 @@
+package com.huiwen;
+/**
+ * 求最大回文子串的普通方法，
+ * 1.加#
+ * 2.外扩
+ * @author admin
+ *
+ */
+public class Common {
+	
+	
+	public static void main(String[] args) {
+		int a=new Common().getTheLongest("abcacbca");
+		System.out.println(a);
+	}
+	
+	
+	public int getTheLongest(String str){
+		
+		StringBuffer s = new StringBuffer();
+		int maxLength =0;
+		for(int i =0;i<str.length();i++){
+			s.append(str.charAt(i));
+			s.append("#");
+		}
+		str = s.toString();
+		
+		for(int i=1;i<s.length();i++){
+			
+			int temp =0;
+			for(int j=1;j<=i&&j<s.length()-i;j++){
+				char a =str.charAt(i-j);
+				char b =str.charAt(i+j);
+				if(a==b){
+					temp++;
+				}else{
+					break;
+				}
+				
+			}
+			if(maxLength<temp){
+				maxLength=temp;
+			}
+			
+		}
+		
+		return maxLength;
+		
+	}
+	
+
+}
