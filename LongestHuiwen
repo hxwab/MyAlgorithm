@@ -14,7 +14,6 @@ public class Common {
 		System.out.println(a);
 	}
 	
-	
 	public int getTheLongest(String str){
 		
 		StringBuffer s = new StringBuffer();
@@ -47,6 +46,5 @@ public class Common {
 		return maxLength;
 		
 	}
-	
 
 }
