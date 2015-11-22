@@ -28,9 +28,7 @@ public class Common {
 			
 			int temp =0;
 			for(int j=1;j<=i&&j<s.length()-i;j++){
-				char a =str.charAt(i-j);
-				char b =str.charAt(i+j);
-				if(a==b){
+				if(str.charAt(i-j)==str.charAt(i+j)){
 					temp++;
 				}else{
 					break;
