@@ -1,0 +1,43 @@
+package com.leetcode;
+/**
+能够被2/3/5整除的整数成为丑数，特别的1称为第一个丑数
+*/
+public class UglyNum {
+	
+	
+	public static void main(String[] args) {
+		UglyNum u = new UglyNum();
+		System.out.println(u.isUgly1(14));
+	}
+	public boolean isUgly(int num) {
+        boolean result = false;
+        while(num%2==0){
+            num=num/2;
+        }
+         while(num%3==0){
+             num=num/3;
+         }
+         while(num%5==0){
+             num=num/5;
+         }
+        if(num==1){
+            result = true;
+        }
+        
+        return result;
+    }
+	
+	
+	public boolean isUgly1(int num){
+		
+		do{
+			if(num%2==0) num/=2;
+			else if(num%3==0) num/=3;
+			else if(num%5==0) num/=5;
+			else break;
+		}while(num>1);
+		
+		return num==1;
+	}
+
+}
