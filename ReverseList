@@ -1,0 +1,84 @@
+package com.leetcode;
+/**
+ * 链表反转
+ * @author huangxw
+ *
+ */
+public class ReverseList {
+
+	
+	
+	public static void main(String[] args) {
+		ReverseList r = new ReverseList();
+		ListNode head = r.creatList();
+		r.dispaly(head);
+		head =r.ReverseList1(head);
+		r.dispaly(head);
+	}
+	
+	public ListNode creatList(){
+		ListNode head = null;
+		ListNode ln = new ListNode(1);
+		ListNode ln2 = new ListNode(2);
+		ListNode ln3= new ListNode(3);
+		ListNode ln4 = new ListNode(4);
+		head = ln;
+		ln.next = ln2;
+		ln2.next=ln3;
+		ln3.next=ln4;
+		
+		return head;
+	}
+	
+	
+	
+	 public ListNode ReverseList1(ListNode head) {
+	        
+		 
+		 if(head==null){
+	        	return head;
+	        }
+		 
+	        ListNode t = null;//临时指针
+	        ListNode p= head;//当前指针
+	        ListNode pNext=head.next;//后指针
+	       
+	        
+	       
+	        if(head.next==null){
+	            return head;
+	        }
+	        
+	        while(pNext!=null){
+	           t = p;
+	           p =pNext;
+	           pNext = pNext.next;
+	           p.next=t;
+	        }
+	        head.next = null;
+	        
+	        return p;
+	       
+	    }
+	 
+	 
+	 
+	 
+	 public void dispaly(ListNode head){
+		 
+		 while(head!=null){
+			 System.out.print(head.val +"  ");
+			 head= head.next;
+		 }
+		 System.out.println();
+	 }
+}
+
+ class ListNode {
+    int val;
+    ListNode next = null;
+
+    ListNode(int val) {
+        this.val = val;
+    }
+}
