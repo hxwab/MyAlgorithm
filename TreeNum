@@ -23,7 +23,6 @@ public class TreeKNum {
 	int sum =0;
 	static Stack<Integer> stack = new Stack<Integer>() ;
 	
-	
 	public static void main(String[] args) {
 	
 		TreeNode t1 = new TreeNode(1);
@@ -35,7 +34,6 @@ public class TreeKNum {
 		t.FindPath(t1, 3);
 		
 	}	
-	
 	
 	public void FindPath(TreeNode root,int target) {
 		
