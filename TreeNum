@@ -34,8 +34,6 @@ public class TreeKNum {
 		TreeKNum t = new TreeKNum();
 		t.FindPath(t1, 3);
 		
-		
-		
 	}	
 	
 	
